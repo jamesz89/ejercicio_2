@@ -3,9 +3,9 @@
 class Cow extends Mammal
 {
 
-  public function eat($amount)
+  public function eat($quantity)
   {
-    $this->gainWeight($amount);
+    $this->gainWeight($quantity);
     $this->makeThristy();
   }
 
@@ -20,14 +20,14 @@ class Cow extends Mammal
     $this->loseWeight(3000);
   }
 
-  public function gainWeight($amount)
+  public function gainWeight($quantity)
   {
-    $this->weight = $this->weight + ($amount / 3);
+    $this->weight = $this->weight + ($quantity / 3);
   }
 
-  private function loseWeight($amount)
+  private function loseWeight($quantity)
   {
-    $this->weight = $this->weight - $amount;
+    $this->weight = $this->weight - $quantity;
     if ($this->weight < 200000) {
       $this->makeHungry();
     }

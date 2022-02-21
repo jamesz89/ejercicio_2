@@ -2,19 +2,19 @@
 
 class Pig extends Mammal
 {
-  private $maxAmountEaten = 0;
+  private $maxQuantityEaten = 0;
   private $timesHasEatenWithoutDrinking = 0;
 
-  public function eat($amount)
+  public function eat($quantity)
   {
-    if ($amount > 1000) {
-      $this->gainWeight($amount);
+    if ($quantity > 1000) {
+      $this->gainWeight($quantity);
       $this->satisfyHunger();
-    } else if ($amount > 200 < 999) {
-      $this->gainWeight($amount);
+    } else if ($quantity > 200 < 999) {
+      $this->gainWeight($quantity);
     }
-    if ($amount > $this->maxAmountEaten) {
-      $this->maxAmountEaten = $amount;
+    if ($quantity > $this->maxQuantityEaten) {
+      $this->maxQuantityEaten = $quantity;
     }
     $this->timesHasEatenWithoutDrinking = $this->timesHasEatenWithoutDrinking + 1;
     if ($this->timesHasEatenWithoutDrinking > 3) {
@@ -29,8 +29,8 @@ class Pig extends Mammal
     $this->timesHasEatenWithoutDrinking = 0;
   }
 
-  public function gainWeight($amount)
+  public function gainWeight($quantity)
   {
-    $this->weight = $this->weight + $amount - 200;
+    $this->weight = $this->weight + $quantity - 200;
   }
 }

@@ -27,5 +27,5 @@ abstract class Animal
     $this->isHungry = false;
   }
 
-  abstract function gainWeight($amount);
+  abstract function gainWeight($quantity);
 }
