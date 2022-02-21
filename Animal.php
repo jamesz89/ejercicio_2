@@ -15,6 +15,8 @@ abstract class Animal
     return $this->weight;
   }
 
+  abstract function eat($quantity);
+
   protected function makeHungry()
   {
     $this->isHungry = true;
