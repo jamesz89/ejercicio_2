@@ -19,4 +19,6 @@ abstract class Mammal extends Animal
   {
     $this->isVaccinated = true;
   }
+
+  abstract function gainWeight();
 }
