@@ -21,4 +21,6 @@ abstract class Mammal extends Animal
   }
 
   abstract function gainWeight($amount);
+
+  abstract function drink();
 }
