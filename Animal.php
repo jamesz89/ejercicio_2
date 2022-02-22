@@ -3,11 +3,16 @@
 abstract class Animal
 {
   protected $weight;
-  protected $isHungry;
+  protected $hunger;
 
   public function __construct($weight)
   {
     $this->weight = $weight;
+  }
+
+  public function isHungry()
+  {
+    return $this->hunger;
   }
 
   public function getWeight()
@@ -19,12 +24,12 @@ abstract class Animal
 
   protected function makeHungry()
   {
-    $this->isHungry = true;
+    $this->hunger = true;
   }
 
   protected function satisfyHunger()
   {
-    $this->isHungry = false;
+    $this->hunger = false;
   }
 
   abstract function gainWeight($quantity);
