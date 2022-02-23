@@ -10,7 +10,7 @@ class Pig extends Mammal
     if ($quantity > 1000) {
       $this->gainWeight($quantity);
       $this->satisfyHunger();
-    } else if ($quantity > 200 < 999) {
+    } else if ($quantity > 200 and $quantity < 999) {
       $this->gainWeight($quantity);
     }
     if ($quantity > $this->maxQuantityEaten) {
@@ -29,7 +29,7 @@ class Pig extends Mammal
     $this->timesHasEatenWithoutDrinking = 0;
   }
 
-  public function gainWeight($quantity)
+  protected function gainWeight($quantity)
   {
     $this->weight = $this->weight + $quantity - 200;
   }
