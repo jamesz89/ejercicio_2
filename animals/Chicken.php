@@ -10,9 +10,8 @@ class Chicken extends Animal
     $this->gainWeight(0);
   }
 
-  public function gainWeight($quantity)
+  protected function gainWeight($quantity)
   {
     $this->weight = $this->weight + ($quantity * 0);
   }
-
 }
