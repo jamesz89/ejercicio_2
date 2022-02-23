@@ -32,5 +32,5 @@ abstract class Animal
     $this->hunger = false;
   }
 
-  abstract function gainWeight($quantity);
+  abstract protected function gainWeight($quantity);
 }

@@ -20,7 +20,7 @@ class Cow extends Mammal
     $this->loseWeight(3000);
   }
 
-  public function gainWeight($quantity)
+  protected function gainWeight($quantity)
   {
     $this->weight = $this->weight + ($quantity / 3);
   }
