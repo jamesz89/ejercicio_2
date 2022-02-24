@@ -4,6 +4,12 @@ class Chicken extends Animal
 {
   private $timesHasEaten = 0;
 
+  public function __construct()
+  {
+    $this->hunger = true;
+    $this->weight = 4000;
+  }
+
   public function eat($quantity)
   {
     $this->timesHasEaten = $this->timesHasEaten + 1;
