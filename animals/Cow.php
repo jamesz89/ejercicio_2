@@ -3,6 +3,12 @@
 class Cow extends Mammal
 {
 
+  public function __construct($weight)
+  {
+    Animal::__construct($weight);
+    $this->weight > 200000 ? $this->hunger = false : $this->hunger = true;
+  }
+
   public function eat($quantity)
   {
     $this->gainWeight($quantity);
