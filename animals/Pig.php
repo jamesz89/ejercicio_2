@@ -5,6 +5,11 @@ class Pig extends Mammal
   private $maxQuantityEaten = 0;
   private $timesHasEatenWithoutDrinking = 0;
 
+  public function __construct($weight)
+  {
+    Animal::__construct($weight);
+    $this->hunger = false;
+  }
   public function eat($quantity)
   {
     if ($quantity > 1000) {
