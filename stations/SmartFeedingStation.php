@@ -13,7 +13,7 @@ class SmartFeedingStation extends FeedingStation
 
   private function canFeed(Animal $animal)
   {
-    if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->isHungry()) {
+    if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->getHunger()) {
       return true;
     } else {
       return false;
@@ -30,15 +30,18 @@ class SmartFeedingStation extends FeedingStation
     if ($this->canFeed($animal)) {
       $animal->eat($this->calculatedRationSize($animal));
       $this->currentFoodQuantity - $this->calculatedRationSize($animal);
-      if ($this->currentFoodQuantity < 15000) {
-        $this->needsReload = true;
-      }
+      $this->needsToBeReloaded();
     }
+  }
+
+  private function needsToBeReloaded()
+  {
+    return ($this->currentFoodQuantity < 15000);
   }
 
   public function reload()
   {
-    if ($this->needsReload) {
+    if ($this->needsToBeReloaded()) {
       $this->currentFoodQuantity = $this->maxFoodCapacity;
     }
   }

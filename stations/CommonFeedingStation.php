@@ -14,7 +14,7 @@ class CommonFeedingStation extends FeedingStation
 
   private function canFeed(Animal $animal)
   {
-    if ($this->numberOfRations > 0 and $animal->getWeight() < $this->maxAnimalWeightSupport) {
+    if ($this->numberOfRations > 0 and $animal->getWeight() < $this->maxAnimalWeightSupport and $animal->getHunger()) {
       return true;
     } else {
       return false;
@@ -26,10 +26,13 @@ class CommonFeedingStation extends FeedingStation
     if ($this->canFeed($animal)) {
       $animal->eat($this->rationSize);
       $this->numberOfRations = $this->numberOfRations - 1;
-      if ($this->numberOfRations < 10) {
-        $this->needsReload = true;
-      }
+      $this->needsToBeReloaded();
     }
+  }
+
+  private function needsToBeReloaded()
+  {
+    return ($this->numberOfRations < 10);
   }
 
   public function reload()
