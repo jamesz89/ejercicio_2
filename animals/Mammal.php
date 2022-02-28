@@ -20,6 +20,11 @@ abstract class Mammal extends Animal
     $this->thirst = false;
   }
 
+  public function vaccinationStatus()
+  {
+    return $this->isVaccinated;
+  }
+
   public function vaccinate()
   {
     $this->isVaccinated = true;
