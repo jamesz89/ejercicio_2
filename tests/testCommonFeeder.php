@@ -3,11 +3,11 @@
 include_once("../animals/Animal.php");
 include_once("../animals/Mammal.php");
 include_once("../animals/Cow.php");
-include_once("../stations/Station.php");
-include_once("../stations/FeedingStation.php");
-include_once("../stations/CommonFeedingStation.php");
+include_once("../stations/Device.php");
+include_once("../stations/FeedingDevice.php");
+include_once("../stations/CommonFeedingDevice.php");
 
-$feeder1 = new CommonFeedingStation(1000, 300000);
+$feeder1 = new CommonFeedingDevice(1000, 300000);
 
 $cow1 = new Cow(350000);
 

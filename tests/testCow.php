@@ -10,6 +10,6 @@ $aCow->eat(2000);
 
 $aCow->drink();
 
-$aCow->isHungry();
+$aCow->getHunger();
 
 $aCow->walk();
