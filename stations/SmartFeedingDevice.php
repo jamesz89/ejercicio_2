@@ -11,7 +11,7 @@ class SmartFeedingDevice extends FeedingDevice
     $this->currentFoodQuantity = $maxFoodCapacity;
   }
 
-  private function canFeed(Animal $animal)
+  protected function canFeed(Animal $animal)
   {
     if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->getHunger()) {
       return true;
@@ -33,7 +33,7 @@ class SmartFeedingDevice extends FeedingDevice
     }
   }
 
-  private function needsReloading()
+  protected function needsReloading()
   {
     return ($this->currentFoodQuantity < 15000);
   }
