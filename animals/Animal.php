@@ -10,7 +10,7 @@ abstract class Animal
     $this->weight = $weight;
   }
 
-  public function isHungry()
+  public function getHunger()
   {
     return $this->hunger;
   }

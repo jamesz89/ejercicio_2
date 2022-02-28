@@ -8,14 +8,14 @@ class Pig extends Mammal
   public function __construct($weight)
   {
     Animal::__construct($weight);
-    $this->hunger = false;
+    $this->hunger = true;
   }
   public function eat($quantity)
   {
-    if ($quantity > 200){
+    if ($quantity > 200) {
       $this->gainWeight($quantity);
     }
-    if($quantity > 1000){
+    if ($quantity > 1000) {
       $this->satisfyHunger();
     }
     $this->updateMaxQuantityEaten($quantity);
@@ -40,7 +40,6 @@ class Pig extends Mammal
   public function drink()
   {
     $this->satisfyThrist();
-    $this->makeHungry();
     $this->timesHasEatenWithoutDrinking = 0;
   }
 
