@@ -30,18 +30,17 @@ class SmartFeedingDevice extends FeedingDevice
     if ($this->canFeed($animal)) {
       $animal->eat($this->calculatedRationSize($animal));
       $this->currentFoodQuantity - $this->calculatedRationSize($animal);
-      $this->needsToBeReloaded();
     }
   }
 
-  private function needsToBeReloaded()
+  private function needsReloading()
   {
     return ($this->currentFoodQuantity < 15000);
   }
 
   public function reload()
   {
-    if ($this->needsToBeReloaded()) {
+    if ($this->needsReloading()) {
       $this->currentFoodQuantity = $this->maxFoodCapacity;
     }
   }
