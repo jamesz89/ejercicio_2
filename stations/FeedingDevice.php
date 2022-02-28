@@ -1,6 +1,6 @@
 <?php
 
-abstract class FeedingStation extends Station
+abstract class FeedingDevice
 {
   abstract function reload();
   

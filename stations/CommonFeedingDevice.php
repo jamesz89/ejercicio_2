@@ -1,6 +1,6 @@
 <?php
 
-class CommonFeedingStation extends FeedingStation
+class CommonFeedingDevice extends FeedingDevice
 {
   private $rationSize;
   private $maxAnimalWeightSupport;

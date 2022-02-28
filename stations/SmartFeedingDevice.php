@@ -1,6 +1,6 @@
 <?php
 
-class SmartFeedingStation extends FeedingStation
+class SmartFeedingDevice extends FeedingDevice
 {
   private $maxFoodCapacity;
   private $currentFoodQuantity;
