@@ -12,18 +12,28 @@ class Pig extends Mammal
   }
   public function eat($quantity)
   {
-    if ($quantity > 1000) {
+    if ($quantity > 200){
       $this->gainWeight($quantity);
+    }
+    if($quantity > 1000){
       $this->satisfyHunger();
-    } else if ($quantity > 200 and $quantity < 999) {
-      $this->gainWeight($quantity);
     }
-    if ($quantity > $this->maxQuantityEaten) {
-      $this->maxQuantityEaten = $quantity;
-    }
+    $this->updateMaxQuantityEaten($quantity);
+    $this->updateTimesEatenWithoutDrinking();
+  }
+
+  private function updateTimesEatenWithoutDrinking()
+  {
     $this->timesHasEatenWithoutDrinking = $this->timesHasEatenWithoutDrinking + 1;
     if ($this->timesHasEatenWithoutDrinking > 3) {
       $this->makeThristy();
+    }
+  }
+
+  private function updateMaxQuantityEaten($quantity)
+  {
+    if ($quantity > $this->maxQuantityEaten) {
+      $this->maxQuantityEaten = $quantity;
     }
   }
 
