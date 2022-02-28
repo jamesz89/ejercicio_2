@@ -26,18 +26,17 @@ class CommonFeedingDevice extends FeedingDevice
     if ($this->canFeed($animal)) {
       $animal->eat($this->rationSize);
       $this->numberOfRations = $this->numberOfRations - 1;
-      $this->needsToBeReloaded();
     }
   }
 
-  private function needsToBeReloaded()
+  private function needsReloading()
   {
     return ($this->numberOfRations < 10);
   }
 
   public function reload()
   {
-    if ($this->needsReload) {
+    if ($this->needsReloading()) {
       $this->numberOfRations = $this->numberOfRations + 30;
     }
   }
