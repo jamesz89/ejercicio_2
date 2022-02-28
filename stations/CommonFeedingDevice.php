@@ -38,7 +38,7 @@ class CommonFeedingDevice extends FeedingDevice
   public function reload()
   {
     if ($this->needsReload) {
-      $this->numberOfRations = 30;
+      $this->numberOfRations = $this->numberOfRations + 30;
     }
   }
 }
