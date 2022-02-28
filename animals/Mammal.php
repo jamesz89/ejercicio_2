@@ -2,17 +2,22 @@
 
 abstract class Mammal extends Animal
 {
-  protected $isThirsty = false;
+  protected $thirst = false;
   protected $isVaccinated = false;
+
+  public function getThrist()
+  {
+    return $this->thirst;
+  }
 
   protected function makeThristy()
   {
-    $this->isThirsty = true;
+    $this->thirst = true;
   }
 
   protected function satisfyThrist()
   {
-    $this->isThirsty = false;
+    $this->thirst = false;
   }
 
   public function vaccinate()
