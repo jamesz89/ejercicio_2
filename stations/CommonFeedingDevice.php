@@ -12,7 +12,7 @@ class CommonFeedingDevice extends FeedingDevice
     $this->maxAnimalWeightSupport = $maxAnimalWeightSupport;
   }
 
-  protected function canFeed(Animal $animal)
+  public function canFeed(Animal $animal)
   {
     if ($this->numberOfRations > 0 and $animal->getWeight() < $this->maxAnimalWeightSupport and $animal->getHunger()) {
       return true;

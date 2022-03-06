@@ -4,7 +4,7 @@ class VaccinationDevice extends Device
 {
   private $numberOfVaccineDoses = 50;
 
-  private function canAdministerVaccince(Mammal $mammal)
+  public function canAdministerVaccince(Mammal $mammal)
   {
     if ($mammal instanceof Cow and $mammal->vaccinationStatus() == false) {
       return true;

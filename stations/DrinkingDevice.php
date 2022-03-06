@@ -12,7 +12,7 @@ class DrinkingDevice extends Device
     }
   }
 
-  private function canServeWater(Mammal $mammal)
+  public function canServeWater(Mammal $mammal)
   {
     if ($mammal->getThrist() and $this->numberOfAnimalsServed < 20) {
       return true;

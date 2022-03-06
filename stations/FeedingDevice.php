@@ -3,8 +3,8 @@
 abstract class FeedingDevice extends Device
 { 
   
-  abstract protected function canFeed(Animal $animal);
+  abstract public function canFeed(Animal $animal);
 
-  abstract function feed(Animal $animal);
+  abstract public function feed(Animal $animal);
 
 }
