@@ -4,5 +4,5 @@ abstract class Device
 {
   abstract protected function needsReloading();
 
-  abstract function reload();
+  abstract public function reload();
 }
