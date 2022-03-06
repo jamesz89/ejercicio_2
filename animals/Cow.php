@@ -1,7 +1,7 @@
 <?php
 
-include_once("Mammal.php");
-class Cow extends Mammal
+include_once("Animal.php");
+class Cow extends Animal
 {
 
   public function __construct($weight)

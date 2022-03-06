@@ -6,21 +6,21 @@ class VaccinationDevice extends Device
 {
   private $numberOfVaccineDoses = 50;
 
-  public function canAdministerVaccince(Mammal $mammal)
+  public function canServe(Animal $animal)
   {
-    if ($mammal instanceof Cow and $mammal->vaccinationStatus() == false) {
+    if ($animal instanceof Cow and $animal->vaccinationStatus() == false) {
       return true;
-    } else if ($mammal instanceof Pig) {
+    } else if ($animal instanceof Pig) {
       return true;
     } else {
       return false;
     }
   }
 
-  public function administerVaccine(Mammal $mammal)
+  public function doFunction(Animal $animal)
   {
-    if ($this->canAdministerVaccince($mammal)) {
-      $mammal->vaccinate();
+    if ($this->canServe($animal)) {
+      $animal->vaccinate();
     }
   }
 

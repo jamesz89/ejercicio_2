@@ -1,8 +1,8 @@
 <?php
 
-include_once("Mammal.php");
+include_once("Animal.php");
 
-class Pig extends Mammal
+class Pig extends Animal
 {
   private $maxQuantityEaten = 0;
   private $timesHasEatenWithoutDrinking = 0;

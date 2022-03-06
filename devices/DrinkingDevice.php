@@ -6,17 +6,17 @@ class DrinkingDevice extends Device
 {
   private $numberOfAnimalsServed = 0;
 
-  public function serveWater(Mammal $mammal)
+  public function doFunction(Animal $animal)
   {
-    if ($this->canServeWater($mammal)) {
-      $mammal->drink();
+    if ($this->canServe($animal)) {
+      $animal->drink();
       $this->numberOfAnimalsServed = $this->numberOfAnimalsServed + 1;
     }
   }
 
-  public function canServeWater(Mammal $mammal)
+  public function canServe(Animal $animal)
   {
-    if ($mammal->getThrist() and $this->numberOfAnimalsServed < 20) {
+    if ($animal->getThrist() and $this->numberOfAnimalsServed < 20) {
       return true;
     } else {
       return false;

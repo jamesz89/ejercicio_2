@@ -4,6 +4,7 @@ abstract class Animal
 {
   protected $weight;
   protected $hunger;
+  protected $thirst;
 
   public function __construct($weight)
   {
