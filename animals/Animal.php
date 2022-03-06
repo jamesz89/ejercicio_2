@@ -4,7 +4,8 @@ abstract class Animal
 {
   protected $weight;
   protected $hunger;
-  protected $thirst;
+  protected $thrist;
+  protected $isVaccinated;
 
   public function __construct($weight)
   {
@@ -34,4 +35,31 @@ abstract class Animal
   }
 
   abstract protected function gainWeight($quantity);
+
+  abstract public function drink();
+
+  public function getThrist()
+  {
+    return $this->thrist;
+  }
+
+  protected function makeThristy()
+  {
+    $this->thrist = true;
+  }
+
+  protected function satisfyThrist()
+  {
+    $this->thrist = false;
+  }
+
+  public function vaccinationStatus()
+  {
+    return $this->isVaccinated;
+  }
+
+  public function vaccinate()
+  {
+    $this->isVaccinated = true;
+  }
 }

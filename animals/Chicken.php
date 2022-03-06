@@ -9,6 +9,7 @@ class Chicken extends Animal
   public function __construct()
   {
     $this->hunger = true;
+    $this->thrist = false;
     $this->weight = 4000;
   }
 
@@ -21,5 +22,9 @@ class Chicken extends Animal
   protected function gainWeight($quantity)
   {
     $this->weight = $this->weight + ($quantity * 0);
+  }
+
+  public function drink()
+  {
   }
 }
