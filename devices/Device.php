@@ -6,7 +6,7 @@ abstract class Device
 
   abstract public function reload();
 
-  abstract protected function canServe(Animal $animal);
+  abstract public function canServe(Animal $animal);
 
-  abstract protected function doFunction(Animal $animal);
+  abstract public function doFunction(Animal $animal);
 }
