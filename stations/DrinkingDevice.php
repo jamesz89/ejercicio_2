@@ -4,7 +4,7 @@ include_once("Device.php");
 
 class DrinkingDevice extends Device
 {
-  private $numberOfAnimalsServed;
+  private $numberOfAnimalsServed = 0;
 
   public function serveWater(Mammal $mammal)
   {
