@@ -2,23 +2,39 @@
 
 class ServiceStation
 {
-  private $feedingDevice;
-  private $drinkingDevice;
-  private $vaccinationDevice;
+  private $device1;
+  private $device2;
+  private $device3;
 
-  public function __construct(FeedingDevice $feedingDevice, DrinkingDevice $drinkingDevice, VaccinationDevice $vaccinationDevice)
+  public function __construct(Device $device1, Device $device2, Device $device3)
   {
-    $this->feedingDevice = $feedingDevice;
-    $this->drinkingDevice = $drinkingDevice;
-    $this->vaccinationDevice = $vaccinationDevice;
+    $this->device1 = $device1;
+    $this->device2 = $device2;
+    $this->device3 = $device3;
   }
 
   public function canServe(Animal $animal)
   {
-    if ($this->feedingDevice->canFeed($animal) or $this->drinkingDevice->canServeWater($animal) or $this->vaccinationDevice->canAdministerVaccince($animal)) {
+    if ($this->device1->canServe($animal) or $this->device2->canServe($animal) or $this->device3->canServe($animal)) {
       return true;
-    } else {
-      return false;
     }
+  }
+
+  private function pickRandomDevice()
+  {
+    $choice = rand(1, 3);
+
+    if ($choice == 1) {
+      return $this->device1;
+    } else if ($choice == 2) {
+      return $this->device2;
+    } else if ($choice == 3) {
+      return $this->device3;
+    }
+  }
+
+  public function serve(Animal $animal)
+  {
+    $this->pickRandomDevice()->doFunction($animal);
   }
 }
