@@ -30,6 +30,7 @@ class DrinkingDevice extends Device
 
   public function reload()
   {
+    if($this->needsReloading())
     $this->numberOfAnimalsServed = 0;
   }
 }
