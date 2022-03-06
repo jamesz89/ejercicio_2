@@ -1,5 +1,7 @@
 <?php
 
+include_once("Device.php");
+
 abstract class FeedingDevice extends Device
 { 
   

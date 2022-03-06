@@ -1,5 +1,7 @@
 <?php
 
+include_once("FeedingDevice.php");
+
 class SmartFeedingDevice extends FeedingDevice
 {
   private $maxFoodCapacity;
@@ -11,7 +13,7 @@ class SmartFeedingDevice extends FeedingDevice
     $this->currentFoodQuantity = $maxFoodCapacity;
   }
 
-  protected function canFeed(Animal $animal)
+  public function canFeed(Animal $animal)
   {
     if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->getHunger()) {
       return true;

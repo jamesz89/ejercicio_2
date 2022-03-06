@@ -1,5 +1,7 @@
 <?php
 
+include_once("Animal.php");
+
 class Chicken extends Animal
 {
   private $timesHasEaten = 0;

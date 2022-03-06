@@ -1,5 +1,7 @@
 <?php
 
+include_once("Device.php");
+
 class DrinkingDevice extends Device
 {
   private $numberOfAnimalsServed;

@@ -1,5 +1,7 @@
 <?php
 
+include_once("Mammal.php");
+
 class Pig extends Mammal
 {
   private $maxQuantityEaten = 0;

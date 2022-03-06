@@ -1,5 +1,7 @@
 <?php
 
+include_once("FeedingDevice.php");
+
 class CommonFeedingDevice extends FeedingDevice
 {
   private $rationSize;

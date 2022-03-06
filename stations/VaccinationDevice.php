@@ -1,5 +1,7 @@
 <?php
 
+include_once("Device.php");
+
 class VaccinationDevice extends Device
 {
   private $numberOfVaccineDoses = 50;
