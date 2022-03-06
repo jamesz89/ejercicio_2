@@ -4,8 +4,8 @@ abstract class Animal
 {
   protected $weight;
   protected $hunger;
-  protected $thrist;
-  protected $isVaccinated;
+  protected $thrist = false;
+  protected $isVaccinated = false;
 
   public function __construct($weight)
   {
