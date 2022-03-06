@@ -13,7 +13,7 @@ class ServiceStation
     $this->device3 = $device3;
   }
 
-  public function canServe(Animal $animal)
+  private function canServe(Animal $animal)
   {
     if ($this->device1->canServe($animal) or $this->device2->canServe($animal) or $this->device3->canServe($animal)) {
       return true;
@@ -35,6 +35,15 @@ class ServiceStation
 
   public function serve(Animal $animal)
   {
-    $this->pickRandomDevice()->doFunction($animal);
+    if ($this->canServe($animal)) {
+      $this->pickRandomDevice()->doFunction($animal);
+    }
+  }
+
+  public function reload()
+  {
+    $this->device1->reload();
+    $this->device2->reload();
+    $this->device3->reload();
   }
 }
