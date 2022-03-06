@@ -22,6 +22,7 @@ class VaccinationDevice extends Device
     if ($this->canServe($animal)) {
       $animal->vaccinate();
     }
+    $this->numberOfVaccineDoses = $this->numberOfVaccineDoses - 1;
   }
 
   protected function needsReloading()
