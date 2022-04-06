@@ -16,7 +16,7 @@ class CommonFeedingDevice extends Device
 
   public function canServe(Animal $animal)
   {
-    if ($this->numberOfRations > 0 and $animal->getWeight() < $this->maxAnimalWeightSupport and $animal->getHunger()) {
+    if ($this->numberOfRations > 0 and $animal->getWeight() < $this->maxAnimalWeightSupport and $animal->isHungry()) {
       return true;
     } else {
       return false;

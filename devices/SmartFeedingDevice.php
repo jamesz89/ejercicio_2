@@ -15,7 +15,7 @@ class SmartFeedingDevice extends Device
 
   public function canServe(Animal $animal)
   {
-    if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->getHunger()) {
+    if ($this->currentFoodQuantity > $this->calculatedRationSize($animal) and $animal->isHungry()) {
       return true;
     } else {
       return false;
